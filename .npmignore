@@ -1,0 +1,11 @@
+node_modules
+build
+
+.DS_Store
+.env
+*.log
+
+.babelrc
+.eslint*
+.npmignore
+webpack.*
