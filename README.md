@@ -13,3 +13,6 @@ Set up config in `config.js` with your api details. Run `nvm use; npm link redux
 ## Example
 `nvm use; cd example; npm link; npm install; npm start`.
 Any new builds will automatically refresh the example with updates.
+
+## Notes
+This is a work in progress. I'm hoping to creating an npm package with the next week or 2.
