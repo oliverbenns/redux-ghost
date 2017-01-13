@@ -3,3 +3,11 @@
   padding: 20px;
   margin: 0 auto;
 }
+
+.wrapper button {
+  margin-right: 10px;
+}
+
+.wrapper button:last-child {
+  margin-right: 0;
+}
