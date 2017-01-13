@@ -13,19 +13,21 @@ const App = ({ actions, blog }) => {
       <h1>Redux Ghost Blog</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
       <h2>Posts</h2>
-      <button onClick={actions.getPosts}>Load Posts</button>
-      <button onClick={() => actions.getPost(1)}>Load Post</button>
+      <button onClick={() => actions.getPosts()}>Load Posts</button>
+      <button onClick={() => actions.getPosts({ fields: 'title, slug' })}>Load Posts (title & slug only)</button>
+      <button onClick={() => actions.getPost(1, { include: 'author' })}>Load Single Post</button>
+      <button onClick={() => actions.getPost(1, { include: 'author' })}>Load Single Post (with author data)</button>
 
       <h2>Tags</h2>
-      <button onClick={actions.getTags}>Load Tags</button>
-      <button onClick={() => actions.getTag(1)}>Load Tag</button>
+      <button onClick={() => actions.getTags()}>Load Tags</button>
+      <button onClick={() => actions.getTag(1)}>Load Single Tag</button>
 
       <h2>Users</h2>
-      <button onClick={actions.getUsers}>Load Users</button>
-      <button onClick={() => actions.getUser(1)}>Load User</button>
+      <button onClick={() => actions.getUsers()}>Load Users</button>
+      <button onClick={() => actions.getUser(1)}>Load Single User</button>
 
       <h2>Reset</h2>
-      <button onClick={actions.reset}>Reset</button>
+      <button onClick={() => actions.reset}>Reset</button>
 
       <JsonTree data={blog} theme="monokai" />
     </div>
