@@ -28,7 +28,9 @@ const fail = (type, error) => ({
   error,
 });
 
-const request = (type, url) => {
+const request = (type, uri, options) => {
+  const url = api.constructUrl(uri, options);
+
   return (dispatch) => {
     dispatch(pending(type));
 
@@ -43,50 +45,39 @@ const request = (type, url) => {
 const isId = (id) => typeof id === 'string' || typeof id === 'number';
 
 const getPosts = (options) => {
-  const url = api.constructUrl('/posts/', options);
-
-  return request(GET_POSTS, url);
+  return request(GET_POSTS, '/posts/', options);
 }
 
-const getPost = (id) => {
+const getPost = (id, options) => {
   if (!isId(id)) {
     return fail(GET_POST, 'Invalid Id');
   }
 
-  const url = api.constructUrl(`/posts/${id}/`);
-
-  return request(GET_POST, url);
+  return request(GET_POST, `/posts/${id}/`, options);
 }
 const getTags = (options) => {
-  const url = api.constructUrl('/tags/', options);
-
-  return request(GET_TAGS, url);
+  return request(GET_TAGS, '/tags/', options);
 }
 
-const getTag = (id) => {
+const getTag = (id, options) => {
   if (!isId(id)) {
     return fail(GET_TAG, 'Invalid Id');
   }
 
-  const url = api.constructUrl(`/tags/${id}/`);
-
-  return request(GET_TAG, url);
+  return request(GET_TAG, `/tags/${id}/`, options);
 }
 
 const getUsers = (options) => {
-  const url = api.constructUrl('/users/', options);
 
-  return request(GET_USERS, url);
+  return request(GET_USERS, '/users/', options);
 }
 
-const getUser = (id) => {
+const getUser = (id, options) => {
   if (!isId(id)) {
     return fail(GET_USER, 'Invalid Id');
   }
 
-  const url = api.constructUrl(`/users/${id}/`);
-
-  return request(GET_USER, url);
+  return request(GET_USER, `/users/${id}/`, options);
 }
 
 export default {
