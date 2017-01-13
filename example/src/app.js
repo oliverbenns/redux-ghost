@@ -15,15 +15,14 @@ const App = ({ actions, blog }) => {
       <h2>Posts</h2>
       <button onClick={actions.getPosts}>Load Posts</button>
       <button onClick={() => actions.getPost(1)}>Load Post</button>
-      <button onClick={actions.getPost}>Load Post2</button>
 
       <h2>Tags</h2>
       <button onClick={actions.getTags}>Load Tags</button>
-      <button onClick={actions.getTag}>Load Tag</button>
+      <button onClick={() => actions.getTag(1)}>Load Tag</button>
 
       <h2>Users</h2>
       <button onClick={actions.getUsers}>Load Users</button>
-      <button onClick={actions.getUser}>Load User</button>
+      <button onClick={() => actions.getUser(1)}>Load User</button>
 
       <h2>Reset</h2>
       <button onClick={actions.reset}>Reset</button>
