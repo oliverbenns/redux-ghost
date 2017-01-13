@@ -5,6 +5,7 @@ import {
   GET_TAG,
   GET_USERS,
   GET_USER,
+  RESET,
 } from './action-types';
 
 const initialData = { data: null, error: null, loading: false, meta: null };
@@ -72,6 +73,9 @@ const reducer = (state, action) => {
     [GET_TAG]: () => updateKey('tag'),
     [GET_USERS]: () => updateKey('users'),
     [GET_USER]: () => updateKey('user'),
+    [RESET]: () => ({
+      ...initialState,
+    }),
   };
 
   return reducers[action.type] ? reducers[action.type]() : state;

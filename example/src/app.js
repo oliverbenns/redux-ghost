@@ -27,7 +27,7 @@ const App = ({ actions, blog }) => {
       <button onClick={() => actions.getUser(1)}>Load Single User</button>
 
       <h2>Reset</h2>
-      <button onClick={() => actions.reset}>Reset</button>
+      <button onClick={() => actions.reset()}>Reset</button>
 
       <JsonTree data={blog} theme="monokai" />
     </div>

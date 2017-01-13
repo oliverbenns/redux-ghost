@@ -9,6 +9,7 @@ import {
   GET_TAG,
   GET_USERS,
   GET_USER,
+  RESET,
 } from './action-types';
 
 const pending = (type) => ({
@@ -80,6 +81,12 @@ const getUser = (id, options) => {
   return request(GET_USER, `/users/${id}/`, options);
 }
 
+const reset = () => {
+  return {
+    type: RESET,
+  }
+}
+
 export default {
   getPosts,
   getPost,
@@ -87,4 +94,5 @@ export default {
   getTag,
   getUsers,
   getUser,
+  reset,
 };
