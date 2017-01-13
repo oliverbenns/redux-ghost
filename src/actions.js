@@ -53,7 +53,7 @@ const getPost = (id) => {
     return fail(GET_POST, 'Invalid Id');
   }
 
-  const url = api.constructUrl(`/posts/${id}`);
+  const url = api.constructUrl(`/posts/${id}/`);
 
   return request(GET_POST, url);
 }
@@ -68,7 +68,7 @@ const getTag = (id) => {
     return fail(GET_TAG, 'Invalid Id');
   }
 
-  const url = api.constructUrl(`/tags/${id}`);
+  const url = api.constructUrl(`/tags/${id}/`);
 
   return request(GET_TAG, url);
 }
@@ -84,7 +84,7 @@ const getUser = (id) => {
     return fail(GET_USER, 'Invalid Id');
   }
 
-  const url = api.constructUrl(`/users/${id}`);
+  const url = api.constructUrl(`/users/${id}/`);
 
   return request(GET_USER, url);
 }
