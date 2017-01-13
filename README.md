@@ -21,6 +21,7 @@ Actions available:
 | getTag   | id (string / integer), [options (object)](https://api.ghost.org/docs/tagsid)  |
 | getUsers | [options (object)](https://api.ghost.org/docs/users)                          |
 | getUser  | id (string / integer), [options (object)](https://api.ghost.org/docs/usersid) |
+| reset    |                                                                               |
 
 ## Development
 
