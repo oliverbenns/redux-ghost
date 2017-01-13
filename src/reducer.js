@@ -7,17 +7,23 @@ import {
   GET_USER,
 } from './action-types';
 
+const initialData = { data: null, error: null, loading: false, meta: null };
+
 const initialState = {
-  posts: { data: null, error: null, loading: false },
-  post: { data: null, error: null, loading: false },
-  tags: { data: null, error: null, loading: false },
-  tag: { data: null, error: null, loading: false },
-  users: { data: null, error: null, loading: false },
-  user: { data: null, error: null, loading: false },
+  posts: initialData,
+  post: initialData,
+  tags: initialData,
+  tag: initialData,
+  users: initialData,
+  user: initialData,
 };
 
 const createStateHandler = (state, action) => {
+  console.log('action', action);
+
   return (key) => {
+    const isSingle = !(key.substr(key.length - 1) === 's');
+
     const statusHandlers = {
       error: () => ({
         ...state,
@@ -40,7 +46,8 @@ const createStateHandler = (state, action) => {
         ...state,
         [key]: {
           ...state[key],
-          data: action.data,
+          data: isSingle ? action.data[isSingle ? `${key}s` : key][0] : action.data[isSingle ? `${key}s` : key],
+          meta: action.data.meta || null,
           error: null,
           loading: false,
         },
