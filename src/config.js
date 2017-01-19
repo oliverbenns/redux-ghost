@@ -8,7 +8,6 @@ export const setConfig = (options = {}) => {
   config.host = options.host;
   config.clientId = options.clientId;
   config.clientSecret = options.clientSecret;
-  console.log('config', config);
 }
 
 export default config;

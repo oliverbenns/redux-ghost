@@ -20,8 +20,6 @@ const initialState = {
 };
 
 const createStateHandler = (state, action) => {
-  console.log('action', action);
-
   return (key) => {
     const isSingle = !(key.substr(key.length - 1) === 's');
 
