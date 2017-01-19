@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "example",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.4"
