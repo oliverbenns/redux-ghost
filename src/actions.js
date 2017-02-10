@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import 'isomorphic-fetch';
 import { request } from './lib/api';
 import { isId } from './lib/utils';
 import { GET_POSTS, GET_POST, GET_TAGS, GET_TAG, GET_USERS, GET_USER, RESET } from './action-types';
@@ -20,15 +20,13 @@ const fail = (type, error) => ({
   error,
 });
 
-const getData = (type, uri, options) => {
-  return (dispatch) => {
-    dispatch(pending(type));
+const getData = (type, uri, options) => (dispatch) => {
+  dispatch(pending(type));
 
-    return request(uri, options)
-      .then(data => dispatch(success(type, data)))
-      .catch(error => dispatch(fail(type, error)));
-  }
-}
+  return request(uri, options)
+    .then(data => dispatch(success(type, data)))
+    .catch(error => dispatch(fail(type, error)));
+};
 
 // Posts
 const getPosts = (options) => getData(GET_POSTS, '/posts/', options);
@@ -38,7 +36,7 @@ const getPost = (id, options) => {
   }
 
   return getData(GET_POST, `/posts/${id}/`, options);
-}
+};
 
 // Tags
 const getTags = (options) => getData(GET_TAGS, '/tags/', options);
@@ -48,7 +46,7 @@ const getTag = (id, options) => {
   }
 
   return getData(GET_TAG, `/tags/${id}/`, options);
-}
+};
 
 // Users
 const getUsers = (options) => getData(GET_USERS, '/users/', options);
@@ -58,7 +56,7 @@ const getUser = (id, options) => {
   }
 
   return getData(GET_USER, `/users/${id}/`, options);
-}
+};
 
 const reset = () => ({
   type: RESET,

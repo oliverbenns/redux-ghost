@@ -8,6 +8,6 @@ export const setConfig = (options = {}) => {
   config.host = options.host;
   config.clientId = options.clientId;
   config.clientSecret = options.clientSecret;
-}
+};
 
 export default config;

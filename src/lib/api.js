@@ -8,23 +8,21 @@ const constructUrl = (path, params) => {
     client_secret: config.clientSecret,
   });
 
-  return config.host + '/ghost/api/v0.1' + path +  '?' + queryParams;
-}
+  return `${config.host}/ghost/api/v0.1${path}?${queryParams}`;
+};
 
 const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
-    return response
-  } else {
-    const error = new Error(response.statusText);
-    error.response = response;
-
-    throw error;
+    return response;
   }
-}
 
-const parseJson = (response) => {
-  return response.json();
+  const error = new Error(response.statusText);
+  error.response = response;
+
+  throw error;
 };
+
+const parseJson = (response) => response.json();
 
 export const request = (path, options = {}) => {
   const url = constructUrl(path, options);
@@ -32,4 +30,4 @@ export const request = (path, options = {}) => {
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJson);
-}
+};

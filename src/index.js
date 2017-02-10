@@ -8,9 +8,9 @@ export default {
   setConfig,
   actions,
   reducer,
-}
+};
 
 export {
   actions,
   reducer,
-}
+};
