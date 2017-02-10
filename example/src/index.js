@@ -8,10 +8,10 @@ import ReduxGhost, { reducer as ghostReducer } from 'redux-ghost';
 import App from './app';
 import './index.css';
 
-ReduxGhost.setConfig({
+ReduxGhost.config({
   host: 'http://localhost:2368',
   clientId: 'ghost-frontend',
-  clientSecret: '4837a41df11b',
+  clientSecret: '9921c6ca9c2d',
 });
 
 const rootReducer = combineReducers({

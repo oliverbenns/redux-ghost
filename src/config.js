@@ -1,13 +1,9 @@
-const config = {
-  host: null, // .e.g 'http://localhost:2368',
-  clientId: null, // .e.g 'ghost-frontend',
-  clientSecret: null, // .e.g '4837a41df11b',
-};
+export let host = null; // .e.g 'http://localhost:2368',
+export let clientId = null; // .e.g 'ghost-frontend',
+export let clientSecret = null; // .e.g '4837a41df11b',
 
-export const setConfig = (options = {}) => {
-  config.host = options.host;
-  config.clientId = options.clientId;
-  config.clientSecret = options.clientSecret;
+export const config = (options = {}) => {
+  host = options.host;
+  clientId = options.clientId;
+  clientSecret = options.clientSecret;
 };
-
-export default config;

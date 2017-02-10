@@ -1,11 +1,11 @@
 import actions from './actions';
 import reducer from './reducer';
-import { setConfig } from './config';
+import { config } from './config';
 
 // @TODO: Not sure if this is the best way to export.
 
 export default {
-  setConfig,
+  config,
   actions,
   reducer,
 };

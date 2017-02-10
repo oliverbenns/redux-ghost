@@ -16,7 +16,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import ReduxGhost, { reducer as ghostReducer } from 'redux-ghost';
 
-ReduxGhost.setConfig({
+ReduxGhost.config({
   host: '', // e.g. http://localhost:2368
   clientId: '', // e.g. ghost-frontend
   clientSecret: '', // e.g. 4837a41df11b
