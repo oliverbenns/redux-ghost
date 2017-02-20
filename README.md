@@ -1,5 +1,5 @@
 # redux-ghost
-
+[![npm version](https://badge.fury.io/js/redux-ghost.svg)](https://badge.fury.io/js/redux-ghost)
 ## Installation
 ```npm install --save redux-ghost```
 
