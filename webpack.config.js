@@ -39,10 +39,6 @@ var config = {
       }
     ]
   },
-  output: {
-    library: 'ReduxForm',
-    libraryTarget: 'umd'
-  },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
