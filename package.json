@@ -1,6 +1,6 @@
 {
   "name": "redux-ghost",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Redux state handler and api wrapper for Ghost Blog",
   "main": "./build/index.js",
   "repository": {
