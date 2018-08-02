@@ -15,16 +15,19 @@ const App = ({ actions, blog }) => {
       <h2>Posts</h2>
       <button onClick={() => actions.getPosts()}>Load Posts</button>
       <button onClick={() => actions.getPosts({ fields: 'title, slug' })}>Load Posts (title & slug only)</button>
-      <button onClick={() => actions.getPost(1, { include: 'author' })}>Load Single Post</button>
-      <button onClick={() => actions.getPost(1, { include: 'author' })}>Load Single Post (with author data)</button>
+      <button onClick={() => actions.getPost('1')}>Load Single Post</button>
+      <button onClick={() => actions.getPost('1', { include: 'authors' })}>Load Single Post (with author data)</button>
+      <button onClick={() => actions.getPostBySlug('my-post')}>Load Single Post by giving the slug</button>
 
       <h2>Tags</h2>
       <button onClick={() => actions.getTags()}>Load Tags</button>
       <button onClick={() => actions.getTag(1)}>Load Single Tag</button>
+      <button onClick={() => actions.getTagBySlug('my-tag')}>Load Single Tag by giving the slug</button>
 
       <h2>Users</h2>
       <button onClick={() => actions.getUsers()}>Load Users</button>
       <button onClick={() => actions.getUser(1)}>Load Single User</button>
+      <button onClick={() => actions.getUserBySlug('my-user')}>Load Single User by giving the slug</button>
 
       <h2>Reset</h2>
       <button onClick={() => actions.reset()}>Reset</button>
