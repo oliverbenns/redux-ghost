@@ -1,10 +1,13 @@
 import {
   GET_POSTS,
   GET_POST,
+  GET_POST_SLUG,
   GET_TAGS,
   GET_TAG,
+  GET_TAG_SLUG,
   GET_USERS,
   GET_USER,
+  GET_USER_SLUG,
   RESET,
 } from './action-types';
 
@@ -65,10 +68,13 @@ const reducer = (state, action) => {
   const reducers = {
     [GET_POSTS]: () => updateKey('posts'),
     [GET_POST]: () => updateKey('post'),
+    [GET_POST_SLUG]: () => updateKey('post'),
     [GET_TAGS]: () => updateKey('tags'),
     [GET_TAG]: () => updateKey('tag'),
+    [GET_TAG_SLUG]: () => updateKey('tag'),
     [GET_USERS]: () => updateKey('users'),
     [GET_USER]: () => updateKey('user'),
+    [GET_USER_SLUG]: () => updateKey('user'),
     [RESET]: () => ({
       ...initialState,
     }),

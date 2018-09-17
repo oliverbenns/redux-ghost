@@ -1,7 +1,18 @@
 import 'isomorphic-fetch';
 import { request } from './lib/api';
 import { isId } from './lib/utils';
-import { GET_POSTS, GET_POST, GET_TAGS, GET_TAG, GET_USERS, GET_USER, RESET } from './action-types';
+import {
+  GET_POSTS,
+  GET_POST,
+  GET_POST_SLUG,
+  GET_TAGS,
+  GET_TAG,
+  GET_TAG_SLUG,
+  GET_USERS,
+  GET_USER,
+  GET_USER_SLUG,
+  RESET,
+} from './action-types';
 
 const pending = (type) => ({
   type,
@@ -38,6 +49,14 @@ const getPost = (id, options) => {
   return getData(GET_POST, `/posts/${id}/`, options);
 };
 
+const getPostBySlug = (slug, options) => {
+  if (!slug) {
+    return fail(GET_POST_SLUG, 'Slug parameter is null');
+  }
+
+  return getData(GET_POST_SLUG, `/posts/slug/${slug}/`, options);
+};
+
 // Tags
 const getTags = (options) => getData(GET_TAGS, '/tags/', options);
 const getTag = (id, options) => {
@@ -46,6 +65,14 @@ const getTag = (id, options) => {
   }
 
   return getData(GET_TAG, `/tags/${id}/`, options);
+};
+
+const getTagBySlug = (slug, options) => {
+  if (!slug) {
+    return fail(GET_TAG_SLUG, 'Slug parameter is null');
+  }
+
+  return getData(GET_TAG_SLUG, `/tags/slug/${slug}/`, options);
 };
 
 // Users
@@ -58,6 +85,14 @@ const getUser = (id, options) => {
   return getData(GET_USER, `/users/${id}/`, options);
 };
 
+const getUserBySlug = (slug, options) => {
+  if (!slug) {
+    return fail(GET_USER_SLUG, 'Slug parameter is null');
+  }
+
+  return getData(GET_USER_SLUG, `/users/slug/${slug}/`, options);
+};
+
 const reset = () => ({
   type: RESET,
 });
@@ -65,9 +100,12 @@ const reset = () => ({
 export default {
   getPosts,
   getPost,
+  getPostBySlug,
   getTags,
   getTag,
+  getTagBySlug,
   getUsers,
   getUser,
+  getUserBySlug,
   reset,
 };

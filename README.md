@@ -73,15 +73,18 @@ Call your actions how you like, I prefer binding mine to props using [bindAction
 
 Actions available:
 
-| Action   | Arguments                                                                     |
-| -------- | ----------------------------------------------------------------------------- |
-| getPosts | [options (object)](https://api.ghost.org/docs/posts)                          |
-| getPost  | id (string / integer), [options (object)](https://api.ghost.org/docs/postsid) |
-| getTags  | [options (object)](https://api.ghost.org/docs/tags)                           |
-| getTag   | id (string / integer), [options (object)](https://api.ghost.org/docs/tagsid)  |
-| getUsers | [options (object)](https://api.ghost.org/docs/users)                          |
-| getUser  | id (string / integer), [options (object)](https://api.ghost.org/docs/usersid) |
-| reset    |                                                                               |
+| Action        | Arguments                                                                     |
+| ------------- | ----------------------------------------------------------------------------- |
+| getPosts      | [options (object)](https://api.ghost.org/docs/posts)                          |
+| getPost       | id (string / integer), [options (object)](https://api.ghost.org/docs/postsid) |
+| getPostBySlug | slug (string), [options (object)](https://api.ghost.org/docs/postsslugslug)   |
+| getTags       | [options (object)](https://api.ghost.org/docs/tags)                           |
+| getTag        | id (string / integer), [options (object)](https://api.ghost.org/docs/tagsid)  |
+| getTagBySlug  | slug (string), [options (object)](https://api.ghost.org/docs/tagsslugslug)    |
+| getUsers      | [options (object)](https://api.ghost.org/docs/users)                          |
+| getUser       | id (string / integer), [options (object)](https://api.ghost.org/docs/usersid) |
+| getUserBySlug | slug (string), [options (object)](https://api.ghost.org/docs/usersslugslug)   |
+| reset         |                                                                               |
 
 ## Development
 
